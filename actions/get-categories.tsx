@@ -8,5 +8,4 @@ const getCategories = async (): Promise<Category[]> => {
 
   return res.json();
 };
-
 export default getCategories;

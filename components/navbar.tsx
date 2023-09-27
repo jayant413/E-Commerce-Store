@@ -3,7 +3,7 @@ import Link from "next/link";
 import MainNav from "@/components/main-nav";
 import Container from "@/components/ui/container";
 import getCategories from "@/actions/get-categories";
-import NavbarActions from "@/actions/navbar-action";
+import NavbarActions from "./navbar-action";
 
 export const revalidate = 0;
 
@@ -18,33 +18,51 @@ const Navbar = async () => {
     {
       id: "1",
       name: "Shoes",
-      billboard: "Shoes",
+      billboard: {
+        id: "1",
+        label: "Shoes",
+        imageUrl: "string",
+      },
     },
     {
       id: "2",
       name: "Watch",
-      billboard: "Watch",
+      billboard: {
+        id: "2",
+        label: "Watch",
+        imageUrl: "string",
+      },
     },
     {
-      id: "1",
+      id: "3",
       name: "Fashion",
-      billboard: "Fashion",
+      billboard: {
+        id: "3",
+        label: "Fashion",
+        imageUrl: "string",
+      },
     },
     {
-      id: "1",
+      id: "4",
       name: "Electronic",
-      billboard: "Electronic",
+      billboard: {
+        id: "4",
+        label: "Electronic",
+        imageUrl: "string",
+      },
     },
   ];
 
   return (
     <div className="border-b">
       <Container>
-        <div className="relative px-4 sm:px-6 lg:px-8 flex h-16 items-center">
-          <Link href="/" className="ml-4 flex lg:ml-0 gap-x-2">
-            <p className="font-bold text-xl">Store</p>
-          </Link>
-          <MainNav data={categories} />
+        <div className="relative justify-between px-4 sm:px-6 lg:px-8 flex h-16 items-center">
+          <div className="flex">
+            <Link href="/" className="ml-4 flex lg:ml-0 gap-x-2">
+              <p className="font-bold text-xl">Store</p>
+            </Link>
+            <MainNav data={categories} />
+          </div>
           <NavbarActions />
         </div>
       </Container>
