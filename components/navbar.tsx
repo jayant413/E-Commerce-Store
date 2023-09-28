@@ -8,50 +8,7 @@ import NavbarActions from "./navbar-action";
 export const revalidate = 0;
 
 const Navbar = async () => {
-  // const URL = `${process.env.NEXT_PUBLIC_API_URL}/categoreis`;
-  // const res = await fetch(URL);
-  // console.log(res.json());
-  // const categories = await getCategories();
-  // console.log(categories);
-
-  const categories = [
-    {
-      id: "1",
-      name: "Shoes",
-      billboard: {
-        id: "1",
-        label: "Shoes",
-        imageUrl: "string",
-      },
-    },
-    {
-      id: "2",
-      name: "Watch",
-      billboard: {
-        id: "2",
-        label: "Watch",
-        imageUrl: "string",
-      },
-    },
-    {
-      id: "3",
-      name: "Fashion",
-      billboard: {
-        id: "3",
-        label: "Fashion",
-        imageUrl: "string",
-      },
-    },
-    {
-      id: "4",
-      name: "Electronic",
-      billboard: {
-        id: "4",
-        label: "Electronic",
-        imageUrl: "string",
-      },
-    },
-  ];
+  const categories = await getCategories();
 
   return (
     <div className="border-b">
