@@ -7,8 +7,8 @@ import Container from "@/components/ui/container";
 export const revalidate = 0;
 
 const HomePage = async () => {
-  // const products = await getProducts({isFeatured : true});
-  // const billboard = await getBillboard("id")
+  const products = await getProducts({ isFeatured: true });
+  // const billboard = await getBillboard("3ced07fc-14f7-4688-a9b0-9b78499091a4");
   const billboard = {
     id: "2",
     label: "Shop the best quality products in a reasonable rate",
@@ -19,9 +19,9 @@ const HomePage = async () => {
     <Container>
       <div className="space-y-10 pb-10">
         <Billboard data={billboard} />
-      </div>
-      <div className="flex flex-col gap-y-8 px-4 sm:px-6 lg:px-8">
-        <ProductList title="Featured Products" items={[]} />
+        <div className="flex flex-col gap-y-8 px-4 sm:px-6 lg:px-8">
+          <ProductList title="Featured Products" items={products} />
+        </div>
       </div>
     </Container>
   );
