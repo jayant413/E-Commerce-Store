@@ -3,6 +3,9 @@ import type { Metadata } from "next";
 import { Urbanist } from "next/font/google";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import ModalProvider from "@/providers/modal-provider";
+import ToastProvider from "@/providers/toast-provider";
+import { ThemeProvider } from "@/providers/theme-provider";
 
 const font = Urbanist({ subsets: ["latin"] });
 
@@ -10,10 +13,6 @@ export const metadata: Metadata = {
   title: "Mobimart Store",
   description: "Online E-Commerce Store",
 };
-
-// const res = axios.get(
-//   "http://localhost:3000/api/3ced07fc-14f7-4688-a9b0-9b78499091a4/categories"
-// );
 
 export default function RootLayout({
   children,
@@ -23,9 +22,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
-        <Navbar />
-        {children}
-        <Footer />
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <ModalProvider />
+          <ToastProvider />
+          <Navbar />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

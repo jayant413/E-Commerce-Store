@@ -1,7 +1,7 @@
 "use client";
 
 import Currency from "@/components/ui/currency";
-import Button from "@/components/ui/button";
+import Button from "@/components/ui/custom-button";
 import { Product } from "@/types";
 import { LuShoppingCart } from "react-icons/lu";
 // import useCart from "@/hooks/use-cart";
